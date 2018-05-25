@@ -42,6 +42,8 @@
 		7083EA5020A9638A0013D838 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 7083EA4F20A9638A0013D838 /* Person.m */; };
 		7083EA5320A96E080013D838 /* UIImage+TestUIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7083EA5220A96E080013D838 /* UIImage+TestUIImage.m */; };
 		7083EA5620A983E10013D838 /* UIImageView+UIImageViewSelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 7083EA5520A983E10013D838 /* UIImageView+UIImageViewSelf.m */; };
+		7093B96920B7A4A40080FA49 /* UtilTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7093B96820B7A4A40080FA49 /* UtilTools.m */; };
+		7093B96C20B7A65E0080FA49 /* SVProgressHUD+SVP.m in Sources */ = {isa = PBXBuildFile; fileRef = 7093B96B20B7A65E0080FA49 /* SVProgressHUD+SVP.m */; };
 		70DB786620B6AE31006B0CB4 /* KeyChainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DB786520B6AE31006B0CB4 /* KeyChainVC.m */; };
 		70DB786920B6B1F0006B0CB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DB786820B6B1F0006B0CB4 /* Security.framework */; };
 		70F7737320AD5FDC00523A50 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F7737220AD5FDC00523A50 /* Animal.m */; };
@@ -134,6 +136,10 @@
 		7083EA5220A96E080013D838 /* UIImage+TestUIImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TestUIImage.m"; sourceTree = "<group>"; };
 		7083EA5420A983E10013D838 /* UIImageView+UIImageViewSelf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIImageViewSelf.h"; sourceTree = "<group>"; };
 		7083EA5520A983E10013D838 /* UIImageView+UIImageViewSelf.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIImageViewSelf.m"; sourceTree = "<group>"; };
+		7093B96720B7A4A40080FA49 /* UtilTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UtilTools.h; sourceTree = "<group>"; };
+		7093B96820B7A4A40080FA49 /* UtilTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilTools.m; sourceTree = "<group>"; };
+		7093B96A20B7A65E0080FA49 /* SVProgressHUD+SVP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD+SVP.h"; sourceTree = "<group>"; };
+		7093B96B20B7A65E0080FA49 /* SVProgressHUD+SVP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD+SVP.m"; sourceTree = "<group>"; };
 		70DB786420B6AE31006B0CB4 /* KeyChainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyChainVC.h; sourceTree = "<group>"; };
 		70DB786520B6AE31006B0CB4 /* KeyChainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyChainVC.m; sourceTree = "<group>"; };
 		70DB786820B6B1F0006B0CB4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -357,6 +363,10 @@
 			children = (
 				7051FC8020B3FF6C006429AC /* CommonLabel.h */,
 				7051FC8120B3FF6C006429AC /* CommonLabel.m */,
+				7093B96720B7A4A40080FA49 /* UtilTools.h */,
+				7093B96820B7A4A40080FA49 /* UtilTools.m */,
+				7093B96A20B7A65E0080FA49 /* SVProgressHUD+SVP.h */,
+				7093B96B20B7A65E0080FA49 /* SVProgressHUD+SVP.m */,
 			);
 			path = UtilTools;
 			sourceTree = "<group>";
@@ -480,6 +490,7 @@
 				70390CDD20A56C8200644713 /* Sources */,
 				70390CDE20A56C8200644713 /* Frameworks */,
 				70390CDF20A56C8200644713 /* Resources */,
+				B68F394440AAFBD9141F1854 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -601,6 +612,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B68F394440AAFBD9141F1854 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-InterviewDemo/Pods-InterviewDemo-resources.sh",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InterviewDemo/Pods-InterviewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DC9C0171BC84E2228A7CBD3F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -643,8 +672,10 @@
 				705B4DA720B5303400B56FDA /* AppTurnToOtherAppVC.m in Sources */,
 				7051FC6D20B3EBA9006429AC /* StackAndHeapVC.m in Sources */,
 				700A3D2520AEACD3002DB18C /* Message.m in Sources */,
+				7093B96C20B7A65E0080FA49 /* SVProgressHUD+SVP.m in Sources */,
 				700A3D2320AEACD3002DB18C /* NSObject+AssociatedObject.m in Sources */,
 				70390CF720A56C8200644713 /* main.m in Sources */,
+				7093B96920B7A4A40080FA49 /* UtilTools.m in Sources */,
 				70390CE620A56C8200644713 /* AppDelegate.m in Sources */,
 				7051FC8220B3FF6C006429AC /* CommonLabel.m in Sources */,
 				700A3D1720AEAC83002DB18C /* AddAssociatedObjectedVC.m in Sources */,
