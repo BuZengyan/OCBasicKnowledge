@@ -122,9 +122,6 @@
     if (btn.tag == 111) {
 //        urlStr = @"OpenOtherAppDemo://PageOne";
          urlStr = @"OpenOtherAppDemo://PageOne?InterviewDemo";
-        
-        
-        
     }
     [self pushToOtherAppWith:urlStr];
 }
