@@ -7,6 +7,7 @@
 //  公共方法类
 
 #import "UtilTools.h"
+#import "KeyChainTools.h"
 
 @implementation UtilTools
 

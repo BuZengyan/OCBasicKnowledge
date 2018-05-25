@@ -44,6 +44,7 @@
 		7083EA5620A983E10013D838 /* UIImageView+UIImageViewSelf.m in Sources */ = {isa = PBXBuildFile; fileRef = 7083EA5520A983E10013D838 /* UIImageView+UIImageViewSelf.m */; };
 		7093B96920B7A4A40080FA49 /* UtilTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7093B96820B7A4A40080FA49 /* UtilTools.m */; };
 		7093B96C20B7A65E0080FA49 /* SVProgressHUD+SVP.m in Sources */ = {isa = PBXBuildFile; fileRef = 7093B96B20B7A65E0080FA49 /* SVProgressHUD+SVP.m */; };
+		7093B96F20B7B0EF0080FA49 /* KeyChainTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7093B96E20B7B0EF0080FA49 /* KeyChainTools.m */; };
 		70DB786620B6AE31006B0CB4 /* KeyChainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 70DB786520B6AE31006B0CB4 /* KeyChainVC.m */; };
 		70DB786920B6B1F0006B0CB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DB786820B6B1F0006B0CB4 /* Security.framework */; };
 		70F7737320AD5FDC00523A50 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F7737220AD5FDC00523A50 /* Animal.m */; };
@@ -140,6 +141,9 @@
 		7093B96820B7A4A40080FA49 /* UtilTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UtilTools.m; sourceTree = "<group>"; };
 		7093B96A20B7A65E0080FA49 /* SVProgressHUD+SVP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD+SVP.h"; sourceTree = "<group>"; };
 		7093B96B20B7A65E0080FA49 /* SVProgressHUD+SVP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SVProgressHUD+SVP.m"; sourceTree = "<group>"; };
+		7093B96D20B7B0EF0080FA49 /* KeyChainTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyChainTools.h; sourceTree = "<group>"; };
+		7093B96E20B7B0EF0080FA49 /* KeyChainTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyChainTools.m; sourceTree = "<group>"; };
+		7093B97020B7E2580080FA49 /* InterviewDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InterviewDemo.entitlements; sourceTree = "<group>"; };
 		70DB786420B6AE31006B0CB4 /* KeyChainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyChainVC.h; sourceTree = "<group>"; };
 		70DB786520B6AE31006B0CB4 /* KeyChainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyChainVC.m; sourceTree = "<group>"; };
 		70DB786820B6B1F0006B0CB4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -305,6 +309,7 @@
 		70390CE320A56C8200644713 /* InterviewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7093B97020B7E2580080FA49 /* InterviewDemo.entitlements */,
 				705B4DAB20B5312800B56FDA /* UIImage(Categray) */,
 				705B4DAA20B530F400B56FDA /* PersonAndSon */,
 				705B4DA820B5307500B56FDA /* APPdelegate */,
@@ -361,6 +366,8 @@
 		7051FC7F20B3FF5A006429AC /* UtilTools */ = {
 			isa = PBXGroup;
 			children = (
+				7093B96D20B7B0EF0080FA49 /* KeyChainTools.h */,
+				7093B96E20B7B0EF0080FA49 /* KeyChainTools.m */,
 				7051FC8020B3FF6C006429AC /* CommonLabel.h */,
 				7051FC8120B3FF6C006429AC /* CommonLabel.m */,
 				7093B96720B7A4A40080FA49 /* UtilTools.h */,
@@ -549,6 +556,11 @@
 					70390CE020A56C8200644713 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					70390CFB20A56C8200644713 = {
 						CreatedOnToolsVersion = 9.2;
@@ -661,6 +673,7 @@
 				7083EA5620A983E10013D838 /* UIImageView+UIImageViewSelf.m in Sources */,
 				700A3D2420AEACD3002DB18C /* MessageForwarding.m in Sources */,
 				705B4D9F20B4FC7100B56FDA /* ProgressInteractionVC.m in Sources */,
+				7093B96F20B7B0EF0080FA49 /* KeyChainTools.m in Sources */,
 				70F7737620AD609800523A50 /* NSObject+KVO.m in Sources */,
 				701D0E2D20B2673000B04E3A /* PerformSelectorVC.m in Sources */,
 				700A3D3420AEBD4E002DB18C /* NSArray+ZYArray.m in Sources */,
@@ -851,15 +864,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ADDRESS_SANITIZER_CONTAINER_OVERFLOW = NO;
+				CODE_SIGN_ENTITLEMENTS = InterviewDemo/InterviewDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H9J82A3949;
+				DEVELOPMENT_TEAM = 8UXF6NUE7S;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/InterviewDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = InterviewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ZengYan.bu.InterviewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baozun.BZReport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -871,15 +885,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ADDRESS_SANITIZER_CONTAINER_OVERFLOW = NO;
+				CODE_SIGN_ENTITLEMENTS = InterviewDemo/InterviewDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H9J82A3949;
+				DEVELOPMENT_TEAM = 8UXF6NUE7S;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/InterviewDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = InterviewDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ZengYan.bu.InterviewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.baozun.BZReport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

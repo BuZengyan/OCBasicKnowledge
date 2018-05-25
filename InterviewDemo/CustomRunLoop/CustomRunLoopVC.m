@@ -8,9 +8,10 @@
 
 #import "CustomRunLoopVC.h"
 #import <WebKit/WebKit.h>
+#import "CommonWebVC.h"
 
-@interface CustomRunLoopVC ()<UIWebViewDelegate>
-@property (nonatomic, strong)   UIWebView *webView;
+@interface CustomRunLoopVC ()
+
 @end
 
 @implementation CustomRunLoopVC
@@ -20,21 +21,22 @@
     self.title = @"RunLoop";
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self.view addSubview:self.webView];
-    
-    NSURL *url = [NSURL URLWithString:@"https://www.jianshu.com/p/296f182c8faa"];
-    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(0, kNavibarHeight, kScreenWidth, 200);
+    [btn setTitle:@"参考文献：https://www.jianshu.com/p/296f182c8faa" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+
 }
 
-- (UIWebView *)webView{
-    if (!_webView) {
-        _webView = [[UIWebView alloc] init];
-        _webView.frame = CGRectMake(0, kNavibarHeight, kScreenWidth, kScreenHeight - kNavibarHeight);
-        _webView.scalesPageToFit = YES;
-        _webView.delegate = self;
-    }
-    return _webView;
+- (void)btnClick{
+    CommonWebVC *vc = [[CommonWebVC alloc] init];
+    vc.titleStr = @"RunLoop";
+    vc.urlStr = @"https://www.jianshu.com/p/296f182c8faa";
+    [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 
 - (void)didReceiveMemoryWarning {

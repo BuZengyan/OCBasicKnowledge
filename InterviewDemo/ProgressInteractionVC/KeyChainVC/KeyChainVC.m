@@ -8,7 +8,7 @@
 
 #define kPointX (20.0f)
 #define kBtnWidth (kScreenWidth - kPointX * 5)/4
-#define kBtnHeight (44)
+#define kBtnHeight (30)
 #define kTempTag 1000
 
 #import "KeyChainVC.h"
@@ -32,11 +32,7 @@
         2.KeyChain独立于其他APP的沙盒之外，即使删除APP，它存储的信息仍然存在，再次安装APP，还可以使用KeyChain里面的数据
         3.相同的Team ID 开发，可以共享数据。
      */
-    NSString *serviceName = @"zhangsan";
-    NSString *account = @"009";
-    
-    
-    
+
     for (NSInteger i = 0; i < self.btnTitleArray.count; i++) {
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.frame = CGRectMake((kPointX + kBtnWidth)*i + kPointX,kNavibarHeight + kPointX, kBtnWidth, kBtnHeight);

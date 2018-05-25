@@ -109,7 +109,7 @@
      *  约定格式：协议名://应用B的URL Schemes?应用A的URL Schemes
      *  即 @"OpenOtherAppDemo://ZengYan.bu.OpenOtherAppDemo ？InterviewDemo";
      */
-    NSString *urlStr = @"OpenOtherAppDemo://ZengYan.bu.OpenOtherAppDemo";
+    NSString *urlStr = @"MapNewApp://com.born.mapNew";
     urlStr = @"OpenOtherAppDemo://ZengYan.bu.OpenOtherAppDemo?InterviewDemo";
     [self pushToOtherAppWith:urlStr];
 
@@ -117,10 +117,10 @@
 
 #pragma mark - 跳转到指定页面
 - (void)turnToPointPageClick:(UIButton *)btn{
-    NSString *urlStr = @"OpenOtherAppDemo://PageTwo";
+    NSString *urlStr = @"MapNewApp://";
     urlStr = @"OpenOtherAppDemo://PageTwo?InterviewDemo";
     if (btn.tag == 111) {
-//        urlStr = @"OpenOtherAppDemo://PageOne";
+        urlStr = @"MapNewApp://";
          urlStr = @"OpenOtherAppDemo://PageOne?InterviewDemo";
     }
     [self pushToOtherAppWith:urlStr];
