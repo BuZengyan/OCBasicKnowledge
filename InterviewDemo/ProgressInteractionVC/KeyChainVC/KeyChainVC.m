@@ -22,7 +22,6 @@ static  NSString * const KEY_NAME = @"KEY_NAME";
 static  NSString * const KEY_USERNAME_PASSWORD = @"8UXF6NUE7S.com.baozun.ZyShare";
 
 @interface KeyChainVC ()<UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic, strong)   NSMutableArray  *btnTitleArray;
 
 @property (nonatomic, strong)   UIButton    *saveBtn;   /// 存
 @property (nonatomic, strong)   UIButton    *takeBtn;   /// 取
@@ -69,17 +68,7 @@ static  NSString * const KEY_USERNAME_PASSWORD = @"8UXF6NUE7S.com.baozun.ZyShare
     [self.view addSubview:self.mainTableView];
     // 首先查询一次
     [self getKeyChain];
-}
-
-- (NSMutableArray *)btnTitleArray{
-    if (!_btnTitleArray) {
-        _btnTitleArray = [[NSMutableArray alloc] init];
-        [_btnTitleArray addObject:@"存"];
-        [_btnTitleArray addObject:@"删"];
-        [_btnTitleArray addObject:@"取"];
-        [_btnTitleArray addObject:@"改"];
-    }
-    return _btnTitleArray;
+    
 }
 
 #pragma mark - 初始化控件
@@ -259,8 +248,10 @@ static  NSString * const KEY_USERNAME_PASSWORD = @"8UXF6NUE7S.com.baozun.ZyShare
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellStr];
     }
+    NSMutableDictionary *dic = [KeyChainTools readForKey:KEY_USERNAME_PASSWORD];
+    NSLog(@"password = %@ name = %@",[dic objectForKey:KEY_PASSWORD],[dic objectForKey:KEY_NAME]);
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.text = [NSString stringWithFormat:@"name = %@ \npassword = %@",self.password,self.name];
+    cell.textLabel.text = [NSString stringWithFormat:@"name = %@ \npassword = %@",[dic objectForKey:KEY_NAME],[dic objectForKey:KEY_PASSWORD]];
     return cell;
 }
 #pragma mark - UITextFeildDelegate
@@ -276,7 +267,6 @@ static  NSString * const KEY_USERNAME_PASSWORD = @"8UXF6NUE7S.com.baozun.ZyShare
 - (void)btnClick:(UIButton *)btn{
     [self.view endEditing:YES];
 
-    
     if (btn.tag == kTempTag + 0) {
         // 存
         if (![self NameOrPasswordIsNull]) {
@@ -298,14 +288,8 @@ static  NSString * const KEY_USERNAME_PASSWORD = @"8UXF6NUE7S.com.baozun.ZyShare
     }
 }
 
-- (BOOL)NameOrPasswordIsNull{
-    if ((self.password == nil || [self.password isEqualToString:@""]) || (self.name == nil || [self.name isEqualToString:@""])) {
-        self.errorLabel.textColor = [UIColor redColor];
-        self.errorLabel.text = @"error:name,password为空！";
-        return NO;
-    }
-    return YES;
-}
+
+#pragma mark - 存、取、删、改
 
 // 存
 - (void)addKeyChain{
@@ -387,11 +371,20 @@ static  NSString * const KEY_USERNAME_PASSWORD = @"8UXF6NUE7S.com.baozun.ZyShare
     [self changeErrorLabelStyle:statusStr success:success];
 }
 
-// 公用查询
+#pragma mark - 公用查询
 - (void)getKeyChain{
     NSMutableDictionary *dic = [KeyChainTools readForKey:KEY_USERNAME_PASSWORD];
     NSLog(@"password = %@ name = %@",[dic objectForKey:KEY_PASSWORD],[dic objectForKey:KEY_NAME]);
     [self.mainTableView reloadData];
+}
+
+- (BOOL)NameOrPasswordIsNull{
+    if ((self.password == nil || [self.password isEqualToString:@""]) || (self.name == nil || [self.name isEqualToString:@""])) {
+        self.errorLabel.textColor = [UIColor redColor];
+        self.errorLabel.text = @"error:name,password为空！";
+        return NO;
+    }
+    return YES;
 }
 
 - (void)changeErrorLabelStyle:(NSString *)str success:(BOOL)success{
@@ -402,6 +395,7 @@ static  NSString * const KEY_USERNAME_PASSWORD = @"8UXF6NUE7S.com.baozun.ZyShare
     }
     self.errorLabel.text = str;
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
