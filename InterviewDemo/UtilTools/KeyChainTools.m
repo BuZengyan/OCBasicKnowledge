@@ -39,7 +39,7 @@ NSString *const accessItem = @"8UXF6NUE7S.com.baozun.ZyShare";
     /**
      *  setObject:accessItem 意思是把密码存储在我们自己设置的条目下，系统默认存储在用bundle ID 命名的条目下。自定义条目格式：TeamID.BundleID。如果不想其他APP共享KeyChain，则使用系统默认条目即可。
      */
-    [keyChainQuery setObject:accessItem forKey:(id)kSecAttrAccessGroup];
+//    [keyChainQuery setObject:accessItem forKey:(id)kSecAttrAccessGroup];
     
     // 3.add new object to search dictionary (Attention:the data format)
     [keyChainQuery setObject:[NSKeyedArchiver archivedDataWithRootObject:data] forKey:(__bridge id)kSecValueData];
@@ -60,7 +60,7 @@ NSString *const accessItem = @"8UXF6NUE7S.com.baozun.ZyShare";
     NSMutableDictionary *keyChainQuery = [self getKeyChainQuery:key];
     
     // 2.
-    [keyChainQuery setObject:accessItem forKey:(id)kSecAttrAccessGroup];
+//    [keyChainQuery setObject:accessItem forKey:(id)kSecAttrAccessGroup];
     
     // 3.
     NSData *updata = [NSKeyedArchiver archivedDataWithRootObject:data];
