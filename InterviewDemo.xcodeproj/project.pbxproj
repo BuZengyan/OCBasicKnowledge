@@ -44,6 +44,7 @@
 		7051FC7E20B3FDFE006429AC /* CustomKVOVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7051FC7D20B3FDFE006429AC /* CustomKVOVC.m */; };
 		7051FC8220B3FF6C006429AC /* CommonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7051FC8120B3FF6C006429AC /* CommonLabel.m */; };
 		7059CE1F20BBDF09003142AF /* PrintTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7059CE1E20BBDF09003142AF /* PrintTest.txt */; };
+		7059CE2320BBEFC1003142AF /* EveryFilePathVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7059CE2220BBEFC1003142AF /* EveryFilePathVC.m */; };
 		705B4D9F20B4FC7100B56FDA /* ProgressInteractionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B4D9E20B4FC7100B56FDA /* ProgressInteractionVC.m */; };
 		705B4DA320B4FF9700B56FDA /* CustomShowContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B4DA220B4FF9700B56FDA /* CustomShowContentVC.m */; };
 		705B4DA720B5303400B56FDA /* AppTurnToOtherAppVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B4DA620B5303400B56FDA /* AppTurnToOtherAppVC.m */; };
@@ -145,6 +146,8 @@
 		7051FC8020B3FF6C006429AC /* CommonLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonLabel.h; sourceTree = "<group>"; };
 		7051FC8120B3FF6C006429AC /* CommonLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonLabel.m; sourceTree = "<group>"; };
 		7059CE1E20BBDF09003142AF /* PrintTest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PrintTest.txt; sourceTree = "<group>"; };
+		7059CE2120BBEFC1003142AF /* EveryFilePathVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EveryFilePathVC.h; sourceTree = "<group>"; };
+		7059CE2220BBEFC1003142AF /* EveryFilePathVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EveryFilePathVC.m; sourceTree = "<group>"; };
 		705B4D9D20B4FC7100B56FDA /* ProgressInteractionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressInteractionVC.h; sourceTree = "<group>"; };
 		705B4D9E20B4FC7100B56FDA /* ProgressInteractionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressInteractionVC.m; sourceTree = "<group>"; };
 		705B4DA120B4FF9700B56FDA /* CustomShowContentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomShowContentVC.h; sourceTree = "<group>"; };
@@ -362,6 +365,7 @@
 		70390CE320A56C8200644713 /* InterviewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7059CE2020BBEFA2003142AF /* FilePath */,
 				7093B97020B7E2580080FA49 /* InterviewDemo.entitlements */,
 				705B4DAB20B5312800B56FDA /* UIImage(Categray) */,
 				705B4DAA20B530F400B56FDA /* PersonAndSon */,
@@ -431,6 +435,15 @@
 				7032E9ED20BBCCC5006A497B /* CommonCustomButton.m */,
 			);
 			path = UtilTools;
+			sourceTree = "<group>";
+		};
+		7059CE2020BBEFA2003142AF /* FilePath */ = {
+			isa = PBXGroup;
+			children = (
+				7059CE2120BBEFC1003142AF /* EveryFilePathVC.h */,
+				7059CE2220BBEFC1003142AF /* EveryFilePathVC.m */,
+			);
+			path = FilePath;
 			sourceTree = "<group>";
 		};
 		705B4D9C20B4FC5000B56FDA /* ProgressInteractionVC */ = {
@@ -736,6 +749,7 @@
 				7032E9E920BBCB40006A497B /* DocumentInteractionVC.m in Sources */,
 				705B4D9F20B4FC7100B56FDA /* ProgressInteractionVC.m in Sources */,
 				7093B96F20B7B0EF0080FA49 /* KeyChainTools.m in Sources */,
+				7059CE2320BBEFC1003142AF /* EveryFilePathVC.m in Sources */,
 				70F7737620AD609800523A50 /* NSObject+KVO.m in Sources */,
 				701D0E2D20B2673000B04E3A /* PerformSelectorVC.m in Sources */,
 				700A3D3420AEBD4E002DB18C /* NSArray+ZYArray.m in Sources */,

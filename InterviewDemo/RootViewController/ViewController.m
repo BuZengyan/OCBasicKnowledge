@@ -25,6 +25,7 @@
 #import "CustomKVOVC.h"
 #import "AppTurnToOtherAppVC.h"
 #import "PasteboardVC.h"
+#import "EveryFilePathVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)   Person  *p;
@@ -71,6 +72,7 @@
         [_dataArray addObject:@"KVO"];
         [_dataArray addObject:@"进程间的通信"];
         [_dataArray addObject:@"APP间的跳转传值"];
+        [_dataArray addObject:@"文件路径及文件操作"];
     }
     return _dataArray;
 }
@@ -84,6 +86,7 @@
         [_viewControllersArray addObject:@"CustomKVOVC"];
         [_viewControllersArray addObject:@"ProgressInteractionVC"];
         [_viewControllersArray addObject:@"AppTurnToOtherAppVC"];
+        [_viewControllersArray addObject:@"EveryFilePathVC"];
     }
     return _viewControllersArray;
 }

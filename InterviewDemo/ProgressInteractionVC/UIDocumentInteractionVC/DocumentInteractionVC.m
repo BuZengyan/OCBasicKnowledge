@@ -95,6 +95,9 @@
 
 - (void)quitLooktBtnClick{
     NSLog(@"QuickLook");
+    
+    
+    
     self.filePath = [[NSBundle mainBundle] pathForResource:@"testDocument" ofType:@"pdf"];
     self.qlPreviewController = [[QLPreviewController alloc] init];
     self.qlPreviewController.dataSource = self;
