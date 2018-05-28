@@ -24,7 +24,7 @@
 #import "CustomRunLoopVC.h"
 #import "CustomKVOVC.h"
 #import "AppTurnToOtherAppVC.h"
-
+#import "PasteboardVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)   Person  *p;
@@ -38,7 +38,9 @@
 
 
 @implementation ViewController
-
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -50,7 +52,14 @@
 //    [self testKVO];
 //    objc_msgSend(self, @selector(testKVO));
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToPasteboardVC) name:@"pushToPasteboardVC" object:nil];
+    
     [self.view addSubview:self.mainTableView];
+}
+
+- (void)pushToPasteboardVC{
+    PasteboardVC *vc = [[PasteboardVC alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - 初始化数据源
 - (NSMutableArray *)dataArray{

@@ -22,6 +22,13 @@
 		701D0E2D20B2673000B04E3A /* PerformSelectorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 701D0E2C20B2673000B04E3A /* PerformSelectorVC.m */; };
 		701D0E3120B2B02600B04E3A /* CustomRunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 701D0E3020B2B02600B04E3A /* CustomRunLoopVC.m */; };
 		701D0E3520B2C7D200B04E3A /* CommonWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 701D0E3420B2C7D200B04E3A /* CommonWebVC.m */; };
+		7032E9E020BB9676006A497B /* PasteboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7032E9DF20BB9676006A497B /* PasteboardVC.m */; };
+		7032E9E320BBA65B006A497B /* CopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7032E9E220BBA65B006A497B /* CopyView.m */; };
+		7032E9E520BBA895006A497B /* 0003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7032E9E420BBA895006A497B /* 0003.jpg */; };
+		7032E9E920BBCB40006A497B /* DocumentInteractionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7032E9E820BBCB40006A497B /* DocumentInteractionVC.m */; };
+		7032E9EB20BBCBCA006A497B /* testDocument.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7032E9EA20BBCBCA006A497B /* testDocument.pdf */; };
+		7032E9EE20BBCCC5006A497B /* CommonCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7032E9ED20BBCCC5006A497B /* CommonCustomButton.m */; };
+		7032E9F020BBD34A006A497B /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7032E9EF20BBD34A006A497B /* QuickLook.framework */; };
 		70390CE620A56C8200644713 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70390CE520A56C8200644713 /* AppDelegate.m */; };
 		70390CE920A56C8200644713 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70390CE820A56C8200644713 /* ViewController.m */; };
 		70390CEC20A56C8200644713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70390CEA20A56C8200644713 /* Main.storyboard */; };
@@ -36,6 +43,7 @@
 		7051FC7B20B3F95F006429AC /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 7051FC7A20B3F95F006429AC /* 001.png */; };
 		7051FC7E20B3FDFE006429AC /* CustomKVOVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7051FC7D20B3FDFE006429AC /* CustomKVOVC.m */; };
 		7051FC8220B3FF6C006429AC /* CommonLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7051FC8120B3FF6C006429AC /* CommonLabel.m */; };
+		7059CE1F20BBDF09003142AF /* PrintTest.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7059CE1E20BBDF09003142AF /* PrintTest.txt */; };
 		705B4D9F20B4FC7100B56FDA /* ProgressInteractionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B4D9E20B4FC7100B56FDA /* ProgressInteractionVC.m */; };
 		705B4DA320B4FF9700B56FDA /* CustomShowContentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B4DA220B4FF9700B56FDA /* CustomShowContentVC.m */; };
 		705B4DA720B5303400B56FDA /* AppTurnToOtherAppVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 705B4DA620B5303400B56FDA /* AppTurnToOtherAppVC.m */; };
@@ -100,6 +108,17 @@
 		701D0E3020B2B02600B04E3A /* CustomRunLoopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomRunLoopVC.m; sourceTree = "<group>"; };
 		701D0E3320B2C7D200B04E3A /* CommonWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonWebVC.h; sourceTree = "<group>"; };
 		701D0E3420B2C7D200B04E3A /* CommonWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonWebVC.m; sourceTree = "<group>"; };
+		7032E9DE20BB9676006A497B /* PasteboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasteboardVC.h; sourceTree = "<group>"; };
+		7032E9DF20BB9676006A497B /* PasteboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasteboardVC.m; sourceTree = "<group>"; };
+		7032E9E120BBA65B006A497B /* CopyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyView.h; sourceTree = "<group>"; };
+		7032E9E220BBA65B006A497B /* CopyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopyView.m; sourceTree = "<group>"; };
+		7032E9E420BBA895006A497B /* 0003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0003.jpg; sourceTree = "<group>"; };
+		7032E9E720BBCB40006A497B /* DocumentInteractionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentInteractionVC.h; sourceTree = "<group>"; };
+		7032E9E820BBCB40006A497B /* DocumentInteractionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentInteractionVC.m; sourceTree = "<group>"; };
+		7032E9EA20BBCBCA006A497B /* testDocument.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = testDocument.pdf; sourceTree = "<group>"; };
+		7032E9EC20BBCCC5006A497B /* CommonCustomButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonCustomButton.h; sourceTree = "<group>"; };
+		7032E9ED20BBCCC5006A497B /* CommonCustomButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonCustomButton.m; sourceTree = "<group>"; };
+		7032E9EF20BBD34A006A497B /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		70390CE120A56C8200644713 /* InterviewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterviewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70390CE420A56C8200644713 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70390CE520A56C8200644713 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +144,7 @@
 		7051FC7D20B3FDFE006429AC /* CustomKVOVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomKVOVC.m; sourceTree = "<group>"; };
 		7051FC8020B3FF6C006429AC /* CommonLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonLabel.h; sourceTree = "<group>"; };
 		7051FC8120B3FF6C006429AC /* CommonLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonLabel.m; sourceTree = "<group>"; };
+		7059CE1E20BBDF09003142AF /* PrintTest.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PrintTest.txt; sourceTree = "<group>"; };
 		705B4D9D20B4FC7100B56FDA /* ProgressInteractionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressInteractionVC.h; sourceTree = "<group>"; };
 		705B4D9E20B4FC7100B56FDA /* ProgressInteractionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressInteractionVC.m; sourceTree = "<group>"; };
 		705B4DA120B4FF9700B56FDA /* CustomShowContentVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomShowContentVC.h; sourceTree = "<group>"; };
@@ -159,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7032E9F020BBD34A006A497B /* QuickLook.framework in Frameworks */,
 				70DB786920B6B1F0006B0CB4 /* Security.framework in Frameworks */,
 				155ADEB7EBECFAA3E4A8172A /* libPods-InterviewDemo.a in Frameworks */,
 			);
@@ -284,6 +305,38 @@
 			path = CommonWebVC;
 			sourceTree = "<group>";
 		};
+		7032E9DC20BB9467006A497B /* ProgressInteractionMainVC */ = {
+			isa = PBXGroup;
+			children = (
+				705B4D9D20B4FC7100B56FDA /* ProgressInteractionVC.h */,
+				705B4D9E20B4FC7100B56FDA /* ProgressInteractionVC.m */,
+			);
+			path = ProgressInteractionMainVC;
+			sourceTree = "<group>";
+		};
+		7032E9DD20BB965E006A497B /* PasteboardVC */ = {
+			isa = PBXGroup;
+			children = (
+				7032E9DE20BB9676006A497B /* PasteboardVC.h */,
+				7032E9DF20BB9676006A497B /* PasteboardVC.m */,
+				7032E9E420BBA895006A497B /* 0003.jpg */,
+				7032E9E120BBA65B006A497B /* CopyView.h */,
+				7032E9E220BBA65B006A497B /* CopyView.m */,
+			);
+			path = PasteboardVC;
+			sourceTree = "<group>";
+		};
+		7032E9E620BBCB2B006A497B /* UIDocumentInteractionVC */ = {
+			isa = PBXGroup;
+			children = (
+				7059CE1E20BBDF09003142AF /* PrintTest.txt */,
+				7032E9EA20BBCBCA006A497B /* testDocument.pdf */,
+				7032E9E720BBCB40006A497B /* DocumentInteractionVC.h */,
+				7032E9E820BBCB40006A497B /* DocumentInteractionVC.m */,
+			);
+			path = UIDocumentInteractionVC;
+			sourceTree = "<group>";
+		};
 		70390CD820A56C8200644713 = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +427,8 @@
 				7093B96820B7A4A40080FA49 /* UtilTools.m */,
 				7093B96A20B7A65E0080FA49 /* SVProgressHUD+SVP.h */,
 				7093B96B20B7A65E0080FA49 /* SVProgressHUD+SVP.m */,
+				7032E9EC20BBCCC5006A497B /* CommonCustomButton.h */,
+				7032E9ED20BBCCC5006A497B /* CommonCustomButton.m */,
 			);
 			path = UtilTools;
 			sourceTree = "<group>";
@@ -381,9 +436,10 @@
 		705B4D9C20B4FC5000B56FDA /* ProgressInteractionVC */ = {
 			isa = PBXGroup;
 			children = (
+				7032E9E620BBCB2B006A497B /* UIDocumentInteractionVC */,
+				7032E9DD20BB965E006A497B /* PasteboardVC */,
+				7032E9DC20BB9467006A497B /* ProgressInteractionMainVC */,
 				70DB786320B6AE23006B0CB4 /* KeyChainVC */,
-				705B4D9D20B4FC7100B56FDA /* ProgressInteractionVC.h */,
-				705B4D9E20B4FC7100B56FDA /* ProgressInteractionVC.m */,
 			);
 			path = ProgressInteractionVC;
 			sourceTree = "<group>";
@@ -458,6 +514,7 @@
 		70DB786720B6B1F0006B0CB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7032E9EF20BBD34A006A497B /* QuickLook.framework */,
 				70DB786820B6B1F0006B0CB4 /* Security.framework */,
 				E409CE7988E595B12023BB3B /* libPods-InterviewDemo.a */,
 			);
@@ -599,9 +656,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7059CE1F20BBDF09003142AF /* PrintTest.txt in Resources */,
 				7051FC7920B3F8C9006429AC /* 002.png in Resources */,
 				70390CF420A56C8200644713 /* LaunchScreen.storyboard in Resources */,
+				7032E9E520BBA895006A497B /* 0003.jpg in Resources */,
 				70390CF120A56C8200644713 /* Assets.xcassets in Resources */,
+				7032E9EB20BBCBCA006A497B /* testDocument.pdf in Resources */,
 				70390CEC20A56C8200644713 /* Main.storyboard in Resources */,
 				7051FC7B20B3F95F006429AC /* 001.png in Resources */,
 			);
@@ -670,8 +730,10 @@
 				700A3D3120AEB8CB002DB18C /* MethodSwizzlingForLeiCuVC.m in Sources */,
 				70390CEF20A56C8200644713 /* InterviewDemo.xcdatamodeld in Sources */,
 				70DB786620B6AE31006B0CB4 /* KeyChainVC.m in Sources */,
+				7032E9E020BB9676006A497B /* PasteboardVC.m in Sources */,
 				7083EA5620A983E10013D838 /* UIImageView+UIImageViewSelf.m in Sources */,
 				700A3D2420AEACD3002DB18C /* MessageForwarding.m in Sources */,
+				7032E9E920BBCB40006A497B /* DocumentInteractionVC.m in Sources */,
 				705B4D9F20B4FC7100B56FDA /* ProgressInteractionVC.m in Sources */,
 				7093B96F20B7B0EF0080FA49 /* KeyChainTools.m in Sources */,
 				70F7737620AD609800523A50 /* NSObject+KVO.m in Sources */,
@@ -699,6 +761,8 @@
 				705B4DA320B4FF9700B56FDA /* CustomShowContentVC.m in Sources */,
 				700A3D1B20AEACAB002DB18C /* MessageSendAndForwardingVC.m in Sources */,
 				701D0E3520B2C7D200B04E3A /* CommonWebVC.m in Sources */,
+				7032E9EE20BBCCC5006A497B /* CommonCustomButton.m in Sources */,
+				7032E9E320BBA65B006A497B /* CopyView.m in Sources */,
 				7083EA5320A96E080013D838 /* UIImage+TestUIImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

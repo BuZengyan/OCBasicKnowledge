@@ -19,4 +19,18 @@
     [SVProgressHUD hiddenLoading];
 }
 
+
++ (UIButton *)rightBarButtonItem{
+    UIButton *rightItemView = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightItemView.frame = CGRectMake(0, 0, 80, 44);
+    [rightItemView setTitle:@"参考文献" forState:UIControlStateNormal];
+    [rightItemView setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    rightItemView.titleLabel.font = [UIFont systemFontOfSize:16];
+//    [rightItemView addTarget:self action:@selector(rightClick) forControlEvents:UIControlEventTouchUpInside];
+//    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightItemView];
+    return rightItemView;
+}
+
+
+
 @end

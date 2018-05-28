@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface UtilTools : NSObject
+
 /**
  *  显示加载
  */
@@ -19,5 +20,9 @@
  */
 + (void)hiddenSvp;
 
+/**
+ *  右侧导航栏
+ */
++ (UIButton *)rightBarButtonItem;
 
 @end

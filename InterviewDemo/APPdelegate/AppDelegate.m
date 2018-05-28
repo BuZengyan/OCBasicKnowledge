@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -48,7 +49,31 @@
 
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    
+    // 创建系统剪切板
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    // 淘宝APP从后台切换到前台时，从系统剪切板中读取淘宝口令进行显示
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"淘口令" message:pasteboard.string delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"立即查看", nil];
+    [alert show];
+
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+}
+
+//监听点击事件 代理方法
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSString *btnTitle = [alertView buttonTitleAtIndex:buttonIndex];
+    if ([btnTitle isEqualToString:@"取消"]) {
+        NSLog(@"你点击了取消");
+    }else if ([btnTitle isEqualToString:@"立即查看"] ) {
+        NSLog(@"你点击了立即查看");
+        
+//        [[A sharedApplication] performSelector:@selector(pushToPasteboardVC) withObject:nil];
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"pushToPasteboardVC" object:nil];
+        
+//        NSString *str = [NSString stringWithFormat:
+//                         @"https://itunes.apple.com/cn/app/wei-xin/id414478124?mt=8"];        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    }//https在iTunes中找，这里的事件是前往手机端App store下载微信
 }
 
 
