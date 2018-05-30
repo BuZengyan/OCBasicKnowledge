@@ -22,6 +22,10 @@
 		701D0E2D20B2673000B04E3A /* PerformSelectorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 701D0E2C20B2673000B04E3A /* PerformSelectorVC.m */; };
 		701D0E3120B2B02600B04E3A /* CustomRunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 701D0E3020B2B02600B04E3A /* CustomRunLoopVC.m */; };
 		701D0E3520B2C7D200B04E3A /* CommonWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 701D0E3420B2C7D200B04E3A /* CommonWebVC.m */; };
+		7028ACFF20BE3D21003F8F79 /* LocalSocketVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028ACFE20BE3D21003F8F79 /* LocalSocketVC.m */; };
+		7028AD0320BE43D8003F8F79 /* AirDropVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028AD0220BE43D8003F8F79 /* AirDropVC.m */; };
+		7028AD0720BE46D7003F8F79 /* ActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028AD0620BE46D7003F8F79 /* ActivityVC.m */; };
+		7028AD0B20BE6D9B003F8F79 /* AppGroupsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7028AD0A20BE6D9B003F8F79 /* AppGroupsVC.m */; };
 		7032E9E020BB9676006A497B /* PasteboardVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7032E9DF20BB9676006A497B /* PasteboardVC.m */; };
 		7032E9E320BBA65B006A497B /* CopyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7032E9E220BBA65B006A497B /* CopyView.m */; };
 		7032E9E520BBA895006A497B /* 0003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7032E9E420BBA895006A497B /* 0003.jpg */; };
@@ -109,6 +113,14 @@
 		701D0E3020B2B02600B04E3A /* CustomRunLoopVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomRunLoopVC.m; sourceTree = "<group>"; };
 		701D0E3320B2C7D200B04E3A /* CommonWebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonWebVC.h; sourceTree = "<group>"; };
 		701D0E3420B2C7D200B04E3A /* CommonWebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommonWebVC.m; sourceTree = "<group>"; };
+		7028ACFD20BE3D21003F8F79 /* LocalSocketVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocalSocketVC.h; sourceTree = "<group>"; };
+		7028ACFE20BE3D21003F8F79 /* LocalSocketVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocalSocketVC.m; sourceTree = "<group>"; };
+		7028AD0120BE43D8003F8F79 /* AirDropVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirDropVC.h; sourceTree = "<group>"; };
+		7028AD0220BE43D8003F8F79 /* AirDropVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirDropVC.m; sourceTree = "<group>"; };
+		7028AD0520BE46D7003F8F79 /* ActivityVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ActivityVC.h; sourceTree = "<group>"; };
+		7028AD0620BE46D7003F8F79 /* ActivityVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ActivityVC.m; sourceTree = "<group>"; };
+		7028AD0920BE6D9B003F8F79 /* AppGroupsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppGroupsVC.h; sourceTree = "<group>"; };
+		7028AD0A20BE6D9B003F8F79 /* AppGroupsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppGroupsVC.m; sourceTree = "<group>"; };
 		7032E9DE20BB9676006A497B /* PasteboardVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasteboardVC.h; sourceTree = "<group>"; };
 		7032E9DF20BB9676006A497B /* PasteboardVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasteboardVC.m; sourceTree = "<group>"; };
 		7032E9E120BBA65B006A497B /* CopyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopyView.h; sourceTree = "<group>"; };
@@ -308,6 +320,42 @@
 			path = CommonWebVC;
 			sourceTree = "<group>";
 		};
+		7028ACFC20BE3D0F003F8F79 /* LocalSocketVC */ = {
+			isa = PBXGroup;
+			children = (
+				7028ACFD20BE3D21003F8F79 /* LocalSocketVC.h */,
+				7028ACFE20BE3D21003F8F79 /* LocalSocketVC.m */,
+			);
+			path = LocalSocketVC;
+			sourceTree = "<group>";
+		};
+		7028AD0020BE43CB003F8F79 /* AirDropVC */ = {
+			isa = PBXGroup;
+			children = (
+				7028AD0120BE43D8003F8F79 /* AirDropVC.h */,
+				7028AD0220BE43D8003F8F79 /* AirDropVC.m */,
+			);
+			path = AirDropVC;
+			sourceTree = "<group>";
+		};
+		7028AD0420BE46C9003F8F79 /* ActivityVC */ = {
+			isa = PBXGroup;
+			children = (
+				7028AD0520BE46D7003F8F79 /* ActivityVC.h */,
+				7028AD0620BE46D7003F8F79 /* ActivityVC.m */,
+			);
+			path = ActivityVC;
+			sourceTree = "<group>";
+		};
+		7028AD0820BE6D85003F8F79 /* AppGroupsVC */ = {
+			isa = PBXGroup;
+			children = (
+				7028AD0920BE6D9B003F8F79 /* AppGroupsVC.h */,
+				7028AD0A20BE6D9B003F8F79 /* AppGroupsVC.m */,
+			);
+			path = AppGroupsVC;
+			sourceTree = "<group>";
+		};
 		7032E9DC20BB9467006A497B /* ProgressInteractionMainVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,6 +497,10 @@
 		705B4D9C20B4FC5000B56FDA /* ProgressInteractionVC */ = {
 			isa = PBXGroup;
 			children = (
+				7028AD0820BE6D85003F8F79 /* AppGroupsVC */,
+				7028AD0420BE46C9003F8F79 /* ActivityVC */,
+				7028AD0020BE43CB003F8F79 /* AirDropVC */,
+				7028ACFC20BE3D0F003F8F79 /* LocalSocketVC */,
 				7032E9E620BBCB2B006A497B /* UIDocumentInteractionVC */,
 				7032E9DD20BB965E006A497B /* PasteboardVC */,
 				7032E9DC20BB9467006A497B /* ProgressInteractionMainVC */,
@@ -750,6 +802,7 @@
 				705B4D9F20B4FC7100B56FDA /* ProgressInteractionVC.m in Sources */,
 				7093B96F20B7B0EF0080FA49 /* KeyChainTools.m in Sources */,
 				7059CE2320BBEFC1003142AF /* EveryFilePathVC.m in Sources */,
+				7028AD0B20BE6D9B003F8F79 /* AppGroupsVC.m in Sources */,
 				70F7737620AD609800523A50 /* NSObject+KVO.m in Sources */,
 				701D0E2D20B2673000B04E3A /* PerformSelectorVC.m in Sources */,
 				700A3D3420AEBD4E002DB18C /* NSArray+ZYArray.m in Sources */,
@@ -764,11 +817,13 @@
 				7093B96C20B7A65E0080FA49 /* SVProgressHUD+SVP.m in Sources */,
 				700A3D2320AEACD3002DB18C /* NSObject+AssociatedObject.m in Sources */,
 				70390CF720A56C8200644713 /* main.m in Sources */,
+				7028AD0320BE43D8003F8F79 /* AirDropVC.m in Sources */,
 				7093B96920B7A4A40080FA49 /* UtilTools.m in Sources */,
 				70390CE620A56C8200644713 /* AppDelegate.m in Sources */,
 				7051FC8220B3FF6C006429AC /* CommonLabel.m in Sources */,
 				700A3D1720AEAC83002DB18C /* AddAssociatedObjectedVC.m in Sources */,
 				700A3D2920AEAD3A002DB18C /* MethodSwizzlingVC.m in Sources */,
+				7028ACFF20BE3D21003F8F79 /* LocalSocketVC.m in Sources */,
 				70F7737320AD5FDC00523A50 /* Animal.m in Sources */,
 				700A3D2D20AEB2DF002DB18C /* UIViewController+MethodSwizzlingVC.m in Sources */,
 				7010687420ABF88600FFBE68 /* Sun.m in Sources */,
@@ -777,6 +832,7 @@
 				701D0E3520B2C7D200B04E3A /* CommonWebVC.m in Sources */,
 				7032E9EE20BBCCC5006A497B /* CommonCustomButton.m in Sources */,
 				7032E9E320BBA65B006A497B /* CopyView.m in Sources */,
+				7028AD0720BE46D7003F8F79 /* ActivityVC.m in Sources */,
 				7083EA5320A96E080013D838 /* UIImage+TestUIImage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

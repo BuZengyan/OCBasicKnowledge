@@ -34,6 +34,9 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
+- (void)viewWillDisappear:(BOOL)animated{
+    [UtilTools hiddenSvp];
+}
 - (WKWebView *)webView{
     if (!_webView) {
         _webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, kNavibarHeight, kScreenWidth, kScreenHeight - kNavibarHeight)];

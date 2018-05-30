@@ -12,6 +12,11 @@
 #import "KeyChainVC.h"
 #import "PasteboardVC.h"
 #import "DocumentInteractionVC.h"
+#import "LocalSocketVC.h"
+#import "AirDropVC.h"
+#import "ActivityVC.h"
+#import "AppGroupsVC.h"
+#import "CommonWebVC.h"
 
 @interface ProgressInteractionVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)   NSMutableArray  *urlArray;
@@ -19,6 +24,7 @@
 @property (nonatomic, strong)   NSMutableArray  *contentArray;
 @property (nonatomic, strong)   NSMutableArray  *viewControllersArray;
 @property (nonatomic, strong)   UITableView     *mainTableView;
+
 @end
 
 @implementation ProgressInteractionVC
@@ -29,6 +35,18 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.mainTableView];
+    
+    
+    UIButton *button = [UtilTools rightBarButtonItem];
+    [button addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+}
+
+- (void)rightBtnClick{
+    CommonWebVC *webVC = [[CommonWebVC alloc] init];
+    webVC.titleStr = @"进程通信";
+    webVC.urlStr = @"https://blog.csdn.net/kuangdacaikuang/article/details/78891379#5-local-socket";
+    [self.navigationController pushViewController:webVC animated:YES];
 }
 
 #pragma mark - 初始化数据源
@@ -38,7 +56,10 @@
         [_urlArray addObject:@"https://blog.csdn.net/kuangdacaikuang/article/details/78891379"];
         [_urlArray addObject:@"https://blog.csdn.net/kuangdacaikuang/article/details/78891379"];
         [_urlArray addObject:@"https://blog.csdn.net/kuangdacaikuang/article/details/78891379"];
-         [_urlArray addObject:@"https://blog.csdn.net/kuangdacaikuang/article/details/78891379"];
+        [_urlArray addObject:@"https://blog.csdn.net/kuangdacaikuang/article/details/78891379"];
+        [_urlArray addObject:@"https://blog.csdn.net/kuangdacaikuang/article/details/78891379"];
+        [_urlArray addObject:@"https://blog.csdn.net/kuangdacaikuang/article/details/78891379"];
+        [_urlArray addObject:@"https://blog.csdn.net/kuangdacaikuang/article/details/78891379"];
     }
     return _urlArray;
 }
@@ -49,6 +70,10 @@
         [_contentArray addObject:@"iOS 开发中，最常用的进程间的通信方式。从一个APP唤醒另外一个APP（openURL)，如需要参数可以在URL中拼上参数。常使用场景：微信、QQ、QQ空间等分享，支付宝、微信支付。\n具体流程:配置被唤醒者APP的URL TYPES，包括identifier,url schemes,唤醒者APP通过openURL打开被唤醒者\n\n具体可参考首页APP间的相互跳转😊🤓🤓🤓🤓🤓🤓"];
         [_contentArray addObject:@"Keychain是iOS系统的一个安全容器，存储在它里面的内容都是经过加密的，主要用于存储一些登录信息和身份验证信息。它独立于其他APP的沙盒之外，所以只要登录过，即使删除了APP，该APP的登录信息仍然存在。苹果自己也用Keychain用于存储VPN和WiFi信息。典型的应用场景：统一账户登录平台，使用统一账户登录多个APP。只要一个账户，其他APP就不需要再次输入用户名和密码，可以实现自动登录。例如，一般开发平台会提供登录SDK，会在SDK内部将登录信息写入到Keychain中去，所以只要一个APP登录，其他APP可以共享登录。"];
         [_contentArray addObject:@"Pasteboard粘贴板，系统自带的控件UITextView、UITextFeild、UIWebView等，长按都会出现复制、粘贴、剪切、选中、全选等选项，就是利用系统粘贴板实现的。每个APP都可以去访问系统粘贴板，所以通过粘贴板就可以完成APP间的数据传递。典型应用场景：复制淘宝绕口令通过微信、QQ转发给好友。淘宝APP每次启动时都回去访问粘贴板，去看看有没有需要处理的数据，有的话就去做相应处理。"];
+        [_contentArray addObject:@""];
+        [_contentArray addObject:@""];
+        [_contentArray addObject:@""];
+        [_contentArray addObject:@""];
         [_contentArray addObject:@""];
     }
     return _contentArray;
@@ -61,6 +86,10 @@
         [_dataArray addObject:@"2.KeyChain"];
         [_dataArray addObject:@"3.UIPasteboard"];
         [_dataArray addObject:@"4.DocumentInteraction&&QuickLook"];
+        [_dataArray addObject:@"5.LocalSocket"];
+        [_dataArray addObject:@"6.AirDrop"];
+        [_dataArray addObject:@"7.UIActivityViewController"];
+        [_dataArray addObject:@"8.APP Groups"];
     }
     return _dataArray;
 }
@@ -72,6 +101,10 @@
         [_viewControllersArray addObject:@"KeyChainVC"];
         [_viewControllersArray addObject:@"PasteboardVC"];
         [_viewControllersArray addObject:@"DocumentInteractionVC"];
+        [_viewControllersArray addObject:@"LocalSocketVC"];
+        [_viewControllersArray addObject:@"AirDropVC"];
+        [_viewControllersArray addObject:@"ActivityVC"];
+        [_viewControllersArray addObject:@"AppGroupsVC"];
     }
     return _viewControllersArray;
 }
@@ -113,7 +146,11 @@
         UIViewController *vc = class.new;
         if ([vc isKindOfClass:[KeyChainVC class]] ||
             [vc isKindOfClass:[PasteboardVC class]] ||
-            [vc isKindOfClass:[DocumentInteractionVC class]]) {
+            [vc isKindOfClass:[DocumentInteractionVC class]] ||
+            [vc isKindOfClass:[LocalSocketVC class]] ||
+            [vc isKindOfClass:[AirDropVC class]] ||
+            [vc isKindOfClass:[ActivityVC class]] ||
+            [vc isKindOfClass:[AppGroupsVC class]]){
             [self.navigationController pushViewController:vc animated:YES];
         }else{
             CustomShowContentVC *webVC = (CustomShowContentVC *)vc;

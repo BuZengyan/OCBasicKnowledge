@@ -12,6 +12,7 @@
 #import "Sun.h"
 #import "Animal.h"
 #import "CommonLabel.h"
+#import "CommonWebVC.h"
 
 @interface CustomKVOVC ()
 @property (nonatomic, strong)   Person  *p;
@@ -27,10 +28,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"KVO实践及原理";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = kBlueColor;
     [self.view addSubview:self.label];
+    [self customRightButtonItem];
     [self testKVO];
 }
+
+#pragma mark - 导航栏右侧按钮
+- (void)customRightButtonItem{
+    UIButton *rightBtn = [UtilTools rightBarButtonItem];
+    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+}
+
+- (void)rightBtnClick{
+    NSString *urlStr = @"https://www.jianshu.com/p/0e75d99c3480";
+    CommonWebVC *vc = [[CommonWebVC alloc] init];
+    vc.urlStr = urlStr;
+    vc.titleStr = @"KVO";
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 
 - (CommonLabel *)label{
     if (!_label) {

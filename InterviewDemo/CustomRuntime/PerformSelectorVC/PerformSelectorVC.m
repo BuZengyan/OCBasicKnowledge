@@ -6,39 +6,98 @@
 //  Copyright © 2018年 zengyan.bu. All rights reserved.
 //  performSelector与直接调用的区别
 
-#define kPointX (60.0f)
+#define kPointX (30.0f)
 #define kDistanceY (10)
 #define kButtonHeight (30)
 #define kButtonWidth (kScreenWidth - kPointX * 2)
 #define kTempBtnTag 1000
+#define kCellHeight (44.0f)
 
 #import "PerformSelectorVC.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import "CommonWebVC.h"
 
-@interface PerformSelectorVC ()
+@interface PerformSelectorVC () <UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)   UILabel *textLabel;
 @property (nonatomic, strong)   NSMutableArray *btnNameArray;
+@property (nonatomic, strong)   UITableView *mainTableView; ///
+
 @end
 
 @implementation PerformSelectorVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"PerformSelectorDemo";
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"PerformSelector";
+    self.view.backgroundColor = kBlueColor;
     
     // 直接调用：编译时会校验，如果方法不存在会直接报错
     [self testMethod];
     
     // performSelector:编译时不会报错，运行时才会校验，如果方法不存在直接崩溃，
     [self performSelector:@selector(testMethod) withObject:nil];
-    
     [self usePerformSelector];
-    
-    [self addBtn];
+    [self.view addSubview:self.mainTableView];
     [self.view addSubview:self.textLabel];
+    
+    [self customRightButton];
+    
+}
+
+#pragma mark - 右侧导航栏
+- (void)customRightButton{
+    UIButton *rightBtn = [UtilTools rightBarButtonItem];
+    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+}
+- (void)rightBtnClick{
+    CommonWebVC *webVC = [[CommonWebVC alloc] init];
+    webVC.titleStr = @"PerformSelector";
+    webVC.urlStr = @"https://www.jianshu.com/p/672c0d4f435a";
+    [self.navigationController pushViewController:webVC animated:YES];
+}
+
+#pragma mark - 初始化控件
+- (UITableView *)mainTableView{
+    if (!_mainTableView) {
+        _mainTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kButtonHeight * 3) style:UITableViewStylePlain];
+        _mainTableView.delegate = self;
+        _mainTableView.dataSource = self;
+        _mainTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    }
+    return _mainTableView;
+}
+
+#pragma mark - UITableViewDelegate && UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.btnNameArray.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return kCellHeight;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static  NSString    *cellstr  = @"cellStr";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellstr];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellstr];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn.frame = CGRectMake(kPointX, (kCellHeight - kButtonHeight)/2, kScreenWidth - kPointX * 2, kButtonHeight);
+    [btn setTitle:[self.btnNameArray objectAtIndex:indexPath.row] forState:UIControlStateNormal];
+    btn.layer.masksToBounds = YES;
+    btn.layer.cornerRadius = kButtonHeight / 2;
+    btn.titleLabel.font = [UIFont boldSystemFontOfSize:13];
+    btn.backgroundColor = [UIColor orangeColor];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    btn.tag = indexPath.row + kTempBtnTag;
+    [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.contentView addSubview:btn];
+    return cell;
 }
 
 #pragma mark - 设置按钮
@@ -58,39 +117,16 @@
         [_btnNameArray addObject:@"延迟调用：Dispatch_async"];
         [_btnNameArray addObject:@"实例应用：防止多次点击"];
         [_btnNameArray addObject:@"实例应用：tableView延时加载图片"];
-        [_btnNameArray addObject:@"参考文献"];
     }
     return _btnNameArray;
-}
-
-- (void)addBtn{
-    for (NSInteger i = 0; i < self.btnNameArray.count; i++) {
-        NSString *title = [self.btnNameArray objectAtIndex:i];
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(kPointX, kNavibarHeight + kDistanceY + (kDistanceY + kButtonHeight) * i, kButtonWidth, kButtonHeight);
-        [btn setTitle:title forState:UIControlStateNormal];
-        btn.layer.masksToBounds = YES;
-        btn.layer.cornerRadius = kButtonHeight / 2;
-        btn.titleLabel.font = [UIFont boldSystemFontOfSize:13];
-        btn.backgroundColor = [UIColor orangeColor];
-        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        btn.tag = i + kTempBtnTag;
-        [btn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:btn];
-        if (i == self.btnNameArray.count - 1) {
-            //
-            [btn setBackgroundColor:[UIColor redColor]];
-              [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-        }
-    }
 }
 
 - (UILabel *)textLabel{
     if (!_textLabel) {
         _textLabel = [[UILabel alloc] init];
-        _textLabel.frame = CGRectMake(kPointX, kScreenHeight - kButtonHeight * 4, kScreenWidth - kPointX * 2, kButtonHeight * 4);
+        _textLabel.frame = CGRectMake(kPointX, kScreenHeight - kButtonHeight * 3, kScreenWidth - kPointX * 2, kButtonHeight * 3);
         _textLabel.font = [UIFont boldSystemFontOfSize:13];
-        _textLabel.textColor = [UIColor blueColor];
+        _textLabel.textColor = [UIColor whiteColor];
         _textLabel.textAlignment = NSTextAlignmentCenter;
         _textLabel.numberOfLines = 0;
     }
@@ -327,11 +363,6 @@
         labelText = @"一般处理方式：判断tableView滑动时，不加载图片，静止再加载；运用runloop优化，NSDefalutRunLoopModel";
         UIImage *img = [UIImage imageNamed:@""];
         [self performSelector:@selector(afterDelayLoadImage:) withObject:img afterDelay:0 inModes:@[NSDefaultRunLoopMode]];
-    }else if (btnTag == 13){
-        CommonWebVC *webVC = [[CommonWebVC alloc] init];
-        webVC.titleStr = @"PerformSelector";
-        webVC.urlStr = @"https://www.jianshu.com/p/672c0d4f435a";
-        [self.navigationController pushViewController:webVC animated:YES];
     }
     self.textLabel.text = labelText;
     

@@ -26,6 +26,7 @@
 #import "AppTurnToOtherAppVC.h"
 #import "PasteboardVC.h"
 #import "EveryFilePathVC.h"
+#import "CommonWebVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)   Person  *p;
@@ -56,7 +57,10 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pushToPasteboardVC) name:@"pushToPasteboardVC" object:nil];
     
     [self.view addSubview:self.mainTableView];
+    
 }
+
+
 
 - (void)pushToPasteboardVC{
     PasteboardVC *vc = [[PasteboardVC alloc] init];

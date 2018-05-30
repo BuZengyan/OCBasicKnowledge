@@ -6,7 +6,7 @@
 //  Copyright © 2018年 zengyan.bu. All rights reserved.
 //  展示内容的VC
 
-#define kPointX 0
+#define kPointX 30
 #define kTestPustToOtherApp YES
 
 #import "CustomShowContentVC.h"
@@ -34,24 +34,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.titleStr;
-    self.view.backgroundColor = kWhiteColor;
+    self.view.backgroundColor = kBlueColor;
     
-    self.label = [[UILabel alloc] initWithFrame:CGRectMake(kPointX, kNavibarHeight, kScreenWidth - kPointX * 2, kScreenHeight - kNavibarHeight - kNavibarHeight - kNavibarHeight * 2)];
+    self.label = [[UILabel alloc] initWithFrame:CGRectMake(kPointX, kNavibarHeight, kScreenWidth - kPointX * 2, kScreenHeight - kNavibarHeight - kPointX* 2)];
     self.label.text = self.contentStr;
     self.label.textColor = [UIColor whiteColor];
-    self.label.font = [UIFont systemFontOfSize:16];
-    self.label.backgroundColor = [UIColor orangeColor];
+    self.label.font = [UIFont systemFontOfSize:14];
+    self.label.backgroundColor = [UIColor clearColor];
     self.label.numberOfLines = 0;
     [self.view addSubview:self.label];
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    button.frame = CGRectMake(0, kScreenHeight - kNavibarHeight * 3, kScreenWidth, kNavibarHeight * 3);
-    NSString *btnTitleStr = [NSString stringWithFormat:@"参考文献：%@",self.urlStr];
-    [button setTitle:btnTitleStr forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [UIFont systemFontOfSize:16];
+    UIButton *button = [UtilTools rightBarButtonItem];
     [button addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     
 }
 

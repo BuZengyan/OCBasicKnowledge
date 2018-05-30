@@ -14,12 +14,12 @@
     if (self = [super initWithFrame:frame]) {
         self.textAlignment = NSTextAlignmentCenter;
         self.font = [UIFont boldSystemFontOfSize:14];
-        self.textColor = [UIColor blueColor];
+        self.textColor = [UIColor whiteColor];
         self.numberOfLines = 0;
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
-        [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:btn];
+//        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        btn.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+//        [btn addTarget:self action:@selector(btnClick) forControlEvents:UIControlEventTouchUpInside];
+//        [self addSubview:btn];
     }
     return self;
 }

@@ -16,6 +16,7 @@
 #import "KeyChainVC.h"
 #import "CustomShowContentVC.h"
 #import <Security/Security.h>
+#import "CommonWebVC.h"
 
 static  NSString * const KEY_PASSWORD = @"KEY_PASSWORD";
 static  NSString * const KEY_NAME = @"KEY_NAME";
@@ -69,8 +70,18 @@ static  NSString * const KEY_USERNAME_PASSWORD = @"8UXF6NUE7S.com.baozun.ZyShare
     // 首先查询一次
     [self getKeyChain];
     
+    UIButton *rightBtn = [UtilTools rightBarButtonItem];
+    [rightBtn addTarget:self action:@selector(rightBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    
 }
 
+- (void)rightBtnClick{
+    CommonWebVC *webVC = [[CommonWebVC alloc] init];
+    webVC.titleStr = @"KeyChain";
+    webVC.urlStr = @"https://www.jianshu.com/p/3afc39f6b9a8";
+    [self.navigationController pushViewController:webVC animated:YES];
+}
 #pragma mark - 初始化控件
 - (UIButton *)saveBtn{
     if (!_saveBtn) {

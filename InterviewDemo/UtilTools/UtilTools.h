@@ -25,4 +25,13 @@
  */
 + (UIButton *)rightBarButtonItem;
 
+/**
+ *  commonLabel
+ */
++ (UILabel *)commonLabel;
+
+/**
+ *  commonButton
+ */
++ (UIButton *)commonButton;
 @end
