@@ -62,6 +62,7 @@
 		70DB786920B6B1F0006B0CB4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70DB786820B6B1F0006B0CB4 /* Security.framework */; };
 		70F7737320AD5FDC00523A50 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F7737220AD5FDC00523A50 /* Animal.m */; };
 		70F7737620AD609800523A50 /* NSObject+KVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F7737520AD609800523A50 /* NSObject+KVO.m */; };
+		70F8895220C129F9005A906F /* CodeSignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70F8895120C129F9005A906F /* CodeSignViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -186,6 +187,8 @@
 		70F7737220AD5FDC00523A50 /* Animal.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
 		70F7737420AD609800523A50 /* NSObject+KVO.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVO.h"; sourceTree = "<group>"; };
 		70F7737520AD609800523A50 /* NSObject+KVO.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVO.m"; sourceTree = "<group>"; };
+		70F8895020C129F9005A906F /* CodeSignViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CodeSignViewController.h; sourceTree = "<group>"; };
+		70F8895120C129F9005A906F /* CodeSignViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeSignViewController.m; sourceTree = "<group>"; };
 		E409CE7988E595B12023BB3B /* libPods-InterviewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-InterviewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -413,8 +416,8 @@
 		70390CE320A56C8200644713 /* InterviewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				70F8894F20C129E3005A906F /* ResetCodeSign */,
 				7059CE2020BBEFA2003142AF /* FilePath */,
-				7093B97020B7E2580080FA49 /* InterviewDemo.entitlements */,
 				705B4DAB20B5312800B56FDA /* UIImage(Categray) */,
 				705B4DAA20B530F400B56FDA /* PersonAndSon */,
 				705B4DA820B5307500B56FDA /* APPdelegate */,
@@ -433,6 +436,7 @@
 				70390CF220A56C8200644713 /* LaunchScreen.storyboard */,
 				70390CF520A56C8200644713 /* Info.plist */,
 				700A3D2A20AEADB9002DB18C /* PrefixHeader.pch */,
+				7093B97020B7E2580080FA49 /* InterviewDemo.entitlements */,
 				70390CF620A56C8200644713 /* main.m */,
 				70390CED20A56C8200644713 /* InterviewDemo.xcdatamodeld */,
 			);
@@ -597,6 +601,15 @@
 				7051FC7D20B3FDFE006429AC /* CustomKVOVC.m */,
 			);
 			path = CustomKVO;
+			sourceTree = "<group>";
+		};
+		70F8894F20C129E3005A906F /* ResetCodeSign */ = {
+			isa = PBXGroup;
+			children = (
+				70F8895020C129F9005A906F /* CodeSignViewController.h */,
+				70F8895120C129F9005A906F /* CodeSignViewController.m */,
+			);
+			path = ResetCodeSign;
 			sourceTree = "<group>";
 		};
 		B84FE442208BF1A6EC78C48A /* Pods */ = {
@@ -816,6 +829,7 @@
 				700A3D2520AEACD3002DB18C /* Message.m in Sources */,
 				7093B96C20B7A65E0080FA49 /* SVProgressHUD+SVP.m in Sources */,
 				700A3D2320AEACD3002DB18C /* NSObject+AssociatedObject.m in Sources */,
+				70F8895220C129F9005A906F /* CodeSignViewController.m in Sources */,
 				70390CF720A56C8200644713 /* main.m in Sources */,
 				7028AD0320BE43D8003F8F79 /* AirDropVC.m in Sources */,
 				7093B96920B7A4A40080FA49 /* UtilTools.m in Sources */,

@@ -27,6 +27,7 @@
 #import "PasteboardVC.h"
 #import "EveryFilePathVC.h"
 #import "CommonWebVC.h"
+#import "CodeSignViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)   Person  *p;
@@ -77,6 +78,7 @@
         [_dataArray addObject:@"进程间的通信"];
         [_dataArray addObject:@"APP间的跳转传值"];
         [_dataArray addObject:@"文件路径及文件操作"];
+        [_dataArray addObject:@"ipa逆向签名"];
     }
     return _dataArray;
 }
@@ -91,6 +93,7 @@
         [_viewControllersArray addObject:@"ProgressInteractionVC"];
         [_viewControllersArray addObject:@"AppTurnToOtherAppVC"];
         [_viewControllersArray addObject:@"EveryFilePathVC"];
+        [_viewControllersArray addObject:@"CodeSignViewController"];
     }
     return _viewControllersArray;
 }
